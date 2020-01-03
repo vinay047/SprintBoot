@@ -106,7 +106,8 @@ pipeline {
                                 sh 'aws configure set default.region ${DEFAULT_REGION}'
                                 sh 'ssh ec2-user@${JUMP_SERVER_IP} aws eks --region us-east-1 update-kubeconfig --name ${ECS_CLUSTER_NAME}'
                                 sh 'ssh ec2-user@${JUMP_SERVER_IP} ls -latr'
-                                sh 'ssh ec2-user@${JUMP_SERVER_IP} kubectl apply -f .'
+                                sh 'ssh ec2-user@${JUMP_SERVER_IP} kubectl apply -f pods.yml'
+                                 sh 'ssh ec2-user@${JUMP_SERVER_IP} kubectl apply -f services.yml' 
                                 }catch(error){
                                     sh 'ssh ec2-user@${JUMP_SERVER_IP} kubectl create -f .'
                                 }
