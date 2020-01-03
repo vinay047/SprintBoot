@@ -80,7 +80,7 @@ pipeline {
       stage('Build image & upload') {
                  steps {
                     script {
-                     def customImage = docker.build("vinay047/skimages")
+                     def customImage = docker.build("sridharkidambi/skimages")
                      docker.withRegistry('https://registry.hub.docker.com/','dockerhub'){
                         customImage.push()
                       }
