@@ -34,7 +34,7 @@ pipeline {
 
     stage('Checkout') {
          steps {
-        git 'https://github.com/sridharkidambi/Spring-Boot-REST'
+        git 'https://github.com/vinay047/SprintBoot'
 
         }
        }
